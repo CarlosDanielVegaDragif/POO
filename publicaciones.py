@@ -11,19 +11,19 @@ class Contenido(ABC):
 
     def __init__(self, titulo, autor, viz):
         if not isinstance(titulo, str):
-            raise TypeError("El título debe ser un texto.")
+            raise TypeError("El título debe ser un texto")
         if not titulo.strip():
-            raise ValueError("El título no puede estar vacío.")
+            raise ValueError("El título no puede estar vacío")
 
         if not isinstance(autor, str):
-            raise TypeError("El autor debe ser un texto.")
+            raise TypeError("El autor debe ser un texto")
         if not autor.strip():
-            raise ValueError("El autor no puede estar vacío.")
+            raise ValueError("El autor no puede estar vacío")
 
         if not isinstance(viz, int):
-            raise TypeError("Las visualizaciones deben ser un número entero.")
+            raise TypeError("Las visualizaciones deben ser un número entero")
         if viz < 0:
-            raise ValueError("Las visualizaciones no pueden ser negativas.")
+            raise ValueError("Las visualizaciones no pueden ser negativas")
 
         self.__titulo = titulo
         self.__autor = autor
@@ -49,7 +49,7 @@ class PublicacionVideo(Contenido):
         super().__init__(titulo, autor, viz)
 
         if not isinstance(calidad, CalidadVideo):
-            raise TypeError("La calidad debe ser un valor del enum CalidadVideo.")
+            raise TypeError("La calidad debe ser un valor del enum CalidadVideo")
         self.__calidad = calidad
 
     def mostrar_calidad(self):
